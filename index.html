@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="tk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oracle Cloud Always Free – Howpsuz ulanyş gollanmasy</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --text: #e2e8f0;
+      --accent: #38bdf8;
+      --good: #4ade80;
+      --warn: #fbbf24;
+      --danger: #f87171;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 20px;
+    }
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 1.7rem;
+      margin-bottom: 8px;
+      color: var(--accent);
+    }
+    .subtitle {
+      color: #94a3b8;
+      margin-bottom: 32px;
+      font-size: 0.95rem;
+    }
+    section {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 22px 24px;
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      color: #f1f5f9;
+    }
+    ul, ol {
+      padding-left: 22px;
+      margin: 10px 0;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    .good { color: var(--good); }
+    .warn { color: var(--warn); }
+    .danger { color: var(--danger); }
+    .box {
+      background: #0f172a;
+      border-left: 4px solid var(--accent);
+      padding: 14px 16px;
+      border-radius: 0 8px 8px 0;
+      margin: 14px 0;
+      font-size: 0.95rem;
+    }
+    footer {
+      text-align: center;
+      color: #64748b;
+      font-size: 0.85rem;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #334155;
+    }
+    a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Oracle Cloud Always Free – Howpsuz ulanyş</h1>
+    <p class="subtitle">
+      Bu gollanma Oracle-niň resmi düzgünlerine laýyk gelýän, bloklanma howpuny azaltýan we hasabyňyzy uzak möhletli saklamaga kömek edýän maslahatlary öz içine alýar.
+    </p>
+
+    <section>
+      <h2>1. Hasap açmak (iň möhüm)</h2>
+      <ul>
+        <li><span class="good">✓</span> Diňe <strong>bir adam – bir hasap</strong>. Köp hasap açmak gadagan.</li>
+        <li><span class="good">✓</span> Maglumatlar (at, salgy, telefon, e-poçta) <strong>hakyky</strong> bolmaly.</li>
+        <li><span class="good">✓</span> Kredit / debit kartasy (PIN-siz, virtual däl) bilen barlag geçirilýär.</li>
+        <li><span class="warn">!</span> Home Region açylanda saýlanýar we soň üýtgedilmeýär.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>2. Instance-yň yzyna alynmazlygy (Idle Reclamation)</h2>
+      <p>Oracle 7 günüň dowamynda aşakdaky <strong>ähli</strong> şertler ýerine ýetse, instance-y yzyna alyp bilýär:</p>
+      <ul>
+        <li>CPU (95-nji persentil) &lt; 20%</li>
+        <li>Network &lt; 20%</li>
+        <li>Memory &lt; 20% <em>(diňe A1 / ARM şekillerinde)</em></li>
+      </ul>
+      <div class="box">
+        <strong>Nädip goramaly?</strong><br>
+        • OmniRoute (ýa-da başga hakyky iş) hemişe işleýän bolsun.<br>
+        • Docker konteýneri ýady eýeläp dursa, memory tarapyndan eýýäm goragly bolýar.<br>
+        • Käwagt kiçijik trafik (API, dashboard) bolsa, network hem köterilýär.<br>
+        • 1000 ulanyjy gerek däl – birnäçe adam ýa-da sen özi hemişe baglanyp dursaň ýeterlik.
+      </div>
+    </section>
+
+    <section>
+      <h2>3. Hasabyň uzak möhletli saklanmagy</h2>
+      <ul>
+        <li><span class="danger">✗</span> 30 günden köp hiç kim hasaba girmese → hasap “tark edilen” hasaplanyp togtadylyp ýa-da ýapylyp bilner.</li>
+        <li><span class="good">✓</span> Aýda 1–2 gezek Oracle Console-a girip duruň.</li>
+        <li><span class="good">✓</span> Möhmün maglumatlary (konfig, API key, volume) instance-dan daşarda hem saklaň.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>4. VPN we başga ýurtdan baglanmak</h2>
+      <ul>
+        <li>Serwere dünýäniň islendik ýerinden SSH / OmniRoute arkaly baglanyp bilersiň.</li>
+        <li>VPN ulanmak özi bloklanma sebäbi däl.</li>
+        <li>Hasaba hemişe dürli ýurtlardan / VPN-lerden girmek käwagt şübheli görünüş döredip bilýär – adaty ulanyşda meselesiz.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>5. Gysga sanaw – näme etmeli / etmeli däl</h2>
+      <p><strong class="good">Etmeli:</strong></p>
+      <ul>
+        <li>Hakyky maglumat we bir hasap bilen açmak</li>
+        <li>OmniRoute ýa-da başga hakyky işi hemişe işletmek</li>
+        <li>Käwagt konsola girmek</li>
+        <li>Maglumatlary daşarda backup etmek</li>
+      </ul>
+      <p><strong class="danger">Etmeli däl:</strong></p>
+      <ul>
+        <li>Köp hasap açmak</li>
+        <li>Instance-y 7 günden köp doly boş goýmak</li>
+        <li>Hasaby 30 günden köp taşlamak</li>
+        <li>Ýalan maglumat bermek</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>6. Gysga netije</h2>
+      <div class="box">
+        Doganyň Türkiýe kartasy bilen hasap açyp berse we sen OmniRoute-ni işläp goýsaň, VPN bilen baglanyp bilersiň.  
+        Esasy zat – instance-yň boş durmazlygy we hasabyň uzak wagtlap taşlanmazlygy.  
+        Bu düzgünlere eýersen, bloklanma howpy has pes bolýar.
+      </div>
+    </section>
+
+    <footer>
+      Bu sahypa diňe maglumat üçin. Oracle-niň resmi düzgünleri üýtgäp bilýär – soňky resmi dokumentasiýany barlaň.<br>
+      GitHub Pages üçin taýýarlandy · 2026
+    </footer>
+  </div>
+</body>
+</html>
